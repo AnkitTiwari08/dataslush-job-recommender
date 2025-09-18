@@ -1,0 +1,96 @@
+.candidates-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.candidate-card {
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app.dark .candidate-card {
+  background: linear-gradient(135deg, #2c2c2c, #1f1f1f);
+  border: 1px solid #4caf50;
+  box-shadow: 0 5px 20px rgba(0,255,128,0.2);
+}
+
+.candidate-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.score-bar {
+  position: relative;
+  background: #ddd;
+  height: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.app.dark .score-bar {
+  background: #555;
+}
+
+.score-fill {
+  background: linear-gradient(90deg, #4caf50, #81c784);
+  height: 100%;
+  transition: width 1s ease-in-out;
+}
+
+.score-text {
+  position: absolute;
+  right: 5px;
+  top: -25px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: inherit;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 8px 0;
+}
+
+.skill-badge {
+  background-color: #ff9800;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
+.app.dark .skill-badge {
+  background-color: #ffb74d;
+}
+
+.candidate-rate {
+  font-weight: bold;
+  margin-top: 10px;
+  background-color: #ffeb3b;
+  color: #000;
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 12px;
+}
+
+.app.dark .candidate-rate {
+  background-color: #4caf50;
+  color: #fff;
+}
